@@ -1,0 +1,23 @@
+CC = gcc -std=c99
+CFLAGS = -O2 -Wall #-Werror
+
+all: testqueue
+
+testqueue: testqueue.o queue.o
+	$(CC) -o testqueue testqueue.o queue.o
+
+queue.o: queue.h queue.c
+testqueue.o: queue.h testqueue.c
+
+test: testqueue test1.in test1.out
+	./testqueue < test1.in > /tmp/test1.out
+	diff -u /tmp/test1.out ./test1.out
+
+doc:
+	doxygen
+
+clean:
+	rm -f testqueue testqueue.o queue.o
+
+clobber:
+	rm -rf html latex

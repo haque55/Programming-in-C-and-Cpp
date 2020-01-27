@@ -1,0 +1,10 @@
+add int: Putting 3 into queue
+1 items in queue
+Type a to add, d to delete, q to quit:
+add int: Putting 5 into queue
+2 items in queue
+Type a to add, d to delete, q to quit:
+add int: Putting 7 into queue
+3 items in queue
+Type a to add, d to delete, q to quit:
+Bye.

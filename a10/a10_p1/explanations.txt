@@ -1,0 +1,25 @@
+a) Comment out the using namespace std; and then take your time, read and 
+interpret the error messages.
+
+Explanation: The compiler produces a set of errors due to missing the namespace
+before objects.
+It outputs that "string", "cout" and "endl" weren't declared in the scope.
+Objects "string", "cout" and "endl" declared inside a namespace block are placed
+in a named scope that prevents them from being mistaken for identically-named 
+symbols in other scopes. Therefore we can only use these objects, that are 
+defined inside of the std namespace, we need to prepend "std::" to each 
+"string", "cout" and "endl" found inside Critter.cpp
+
+b) Also remove the Critter:: prefix in one of the methods in Critter.cpp, 
+read and interpret the error message.
+
+Removed Critter:: before setName method
+Explanation: The compiler produces an error saying that "name" was not defined 
+in the scope.
+"name" is a private data member of the Critter class, defined in Critter.h
+When implementing a method for a class it is not necessary to use the selection 
+operator to call methods of the same class or to access data members.
+In our case we haven't specified the class our method belongs to.
+Therefore we can't access the class' other methods or data members.
+We have to prepend "Critter::" to the method definition or write the 
+method definition inside header file or make the data member public.
